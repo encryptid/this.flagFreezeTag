@@ -3,5 +3,5 @@
  */
 
 module.exports = function () {
-    console.log('module loaded');
+    return console.log('module loaded');
 };
