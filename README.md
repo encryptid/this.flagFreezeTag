@@ -18,16 +18,19 @@ There's a good bit of data here, and you should build a few different types of o
 * maybe a Flag type
 **Put each of these constructors in their own module and export them.** These types should have *at least* the following functions:
 
-```// not actual code
+```
+// not actual code
 Player.tag(player); // if the first is a chaser, the second player is frozen
                     // if the first and second players are runners, the second player is unfrozen
 Player.getFlag();   // if the player is a runner, get the flag
 Team.won();         // returns true if the team has won, or false if not (see rules above)
-Team.add(player);   // add a player to the team```
+Team.add(player);   // add a player to the team
+```
 
 Create at least three js files that run different games of FFT. For example (don't use this), one file might be:
 
-```let a = new Player('Todd');
+```
+let a = new Player('Todd');
 let b = new Player('Barb');
 let c = new Player('Fitz');
 
@@ -43,7 +46,8 @@ t.won(); // false
 
 c.tag(a);
 a.frozen(); // true - this player was frozen by Fitz
-// ... more stuff```
+// ... more stuff
+```
 
 ## Hard mode: displaying data in the DOM
 
