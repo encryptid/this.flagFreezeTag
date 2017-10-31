@@ -18,7 +18,7 @@ There's a good bit of data here, and you should build a few different types of o
 * maybe a Flag type
 **Put each of these constructors in their own module and export them.** These types should have *at least* the following functions:
 
-```
+``` javascript
 // not actual code
 Player.tag(player); // if the first is a chaser, the second player is frozen
                     // if the first and second players are runners, the second player is unfrozen
@@ -29,7 +29,7 @@ Team.add(player);   // add a player to the team
 
 Create at least three js files that run different games of FFT. For example (don't use this), one file might be:
 
-```
+``` javascript
 let a = new Player('Todd');
 let b = new Player('Barb');
 let c = new Player('Fitz');
