@@ -56,3 +56,31 @@ Render each team into a list in the DOM.
 * Give the user controls (a text box and button, maybe?) to add players to each team.
 * Add a 'freeze' and 'flag' button to each runner that modifies the underlying object.
 * You should also have a 'winner?' button that adds information to the DOM indicating which team won (if any).
+
+## Steps:
+
+* Create two teams using constructors: 'Runners' and 'Chasers'.
+* They will be similar but with a few key differences: 
+    * when a "chaser" tags an *opponent*, they are frozen; tagging a teammate does nothing.
+    * when a "runner" tags a teammate, they are unfrozen; tagging a "chaser" does nothing.
+
+## Log:
+### 'Let's Talk About `this` Baby...' or 'So, `this` is weird, right?'
+
+### First of all, what is `this`?
+
+This is a concept that is not unique to JavaScript. However, its behavior in JavaScript is apparently somewhat unique. `this` can be likened to a pronoun in the English language. A pronoun is a word that is substituted for a noun, like "Steve is running because *he* is late." In this example, we infer that 'he' refers to 'Steve' because we've already talked about Steve.
+
+Likewise, `this` is defined by its context. And it is here where the metaphor gets a little difficult to follow, since there are many ways to create an object in JavaScript, and `this` can behave a little differently, depending on which way you approach creation.
+
+### Wait, pretend I'm five
+
+In JS, functions are objects. First-class objects, if you want to get fancy. And as objects, functions also have properties. What makes functions fun (sorry) is that they can, of course, be called. When a function is called, or executed, it receives the `this` property (among many others). `this` always refers to an object.
+
+### Which object does `this` refer to?
+
+Generally speaking, `this` is used inside of a function (or method). If it is not defined within a function, it will refer, as always, to an object. In this case, that object would be the "window".
+
+```javascript
+console.log(this === window) //true
+```
