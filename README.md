@@ -89,7 +89,7 @@ console.log(this === window) //true
 
 See?
 
-But if you access the value of `this` within the context of an object:
+But if you access the value of `this` within the context of an object...
 
 ```javascript
 let sandwich = {
@@ -105,7 +105,7 @@ let sandwich = {
 console.log(sandwich.info()); //'sandwich' object
 ```
 
-... you get the value of `this`, in this case, a sandwich worth of a king.
+... you get the value of `this`, in this case, a sandwich worthy of a king!
 
 This is `this` in a nutshell.
 
