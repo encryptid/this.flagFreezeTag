@@ -71,7 +71,9 @@ Render each team into a list in the DOM.
 
 This is a concept that is not unique to JavaScript. However, its behavior in JavaScript is apparently somewhat unique. `this` can be likened to a pronoun in the English language. A pronoun is a word that is substituted for a noun, like "Steve is running because *he* is late." In this example, we infer that 'he' refers to 'Steve' because we've already talked about Steve.
 
-Likewise, `this` is defined by its context. And it is here where the metaphor gets a little difficult to follow, since there are many ways to create an object in JavaScript, and `this` can behave a little differently, depending on which way you approach creation.
+Likewise, `this` is defined by its context. And it is here where the metaphor gets a little difficult to follow, ~~since there are many ways to create an object in JavaScript, and `this` can behave a little differently, depending on which way you approach creation.~~
+
+On second thought, I don't think this is true. I think the difficulty arises with how you *interact* with `this`. That is to say, if you try to interact with `this` outside of the context of the object it is bound to, things get a little more difficult. But I digress...
 
 ### Wait, pretend I'm five
 
@@ -79,8 +81,34 @@ In JS, functions are objects. First-class objects, if you want to get fancy. And
 
 ### Which object does `this` refer to?
 
-Generally speaking, `this` is used inside of a function (or method). If it is not defined within a function, it will refer, as always, to an object. In this case, that object would be the "window".
+Generally speaking, `this` is used in a method (a function contained within an object). If the `this` that your referencing is not contained within an object, it still must refer to an object. Not being attached to any particular object, however, sets it adrift and thus `this` wanders in the desert, a tragic figure, a ronin. Wanting desperately to serve some master, `this` is associated with the window object, until a kinder, better master comes along.
 
 ```javascript
 console.log(this === window) //true
 ```
+
+See?
+
+But if you access the value of `this` within the context of an object:
+
+```javascript
+let sandwich = {
+  condiment: 'spicy brown mustard',
+  meat: 'pastrami',
+  bread: 'rye',
+  cheese: 'swiss',
+  info: function() {
+    return this;
+  }
+}
+
+console.log(sandwich.info()); //'sandwich' object
+```
+
+... you get the value of `this`, in this case, a sandwich worth of a king.
+
+This is `this` in a nutshell.
+
+### But why?
+
+Excellent question, my inquisitve friend!
